@@ -4,7 +4,7 @@
       <img class="hn-calendar__header__btn-item" src="./assets/page_first.png" @click="addYear()" />
       <img class="hn-calendar__header__btn-item" src="./assets/arrow_left.png" @click="addMonth()" />
       <div class="hn-calendar__header__text">
-        {{ `${dateYear}年${dateMonth}月` }}{{ dateDay ? dateDay + '日' : '' }}
+        {{ `${dateYear}年${dateMonth}月` }}{{ !Array.isArray(props.modelValue) && dateDay ? dateDay + '日' : '' }}
       </div>
       <img class="hn-calendar__header__btn-item" src="./assets/arrow_right.png" @click="addMonth(1)" />
       <img class="hn-calendar__header__btn-item" src="./assets/page_last.png" @click="addYear(1)" />
