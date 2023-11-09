@@ -77,7 +77,7 @@
     "title": "your-uniapp",
     "template": "index.html",
     "router": {
-      "mode": "history",
+      "mode": "hash",
       "base": "./"
     },
     "async": {
