@@ -73,6 +73,20 @@
   "mp-toutiao": {
     "usingComponents": true
   },
+  "h5": {
+    "title": "your-uniapp",
+    "template": "index.html",
+    "router": {
+      "mode": "history",
+      "base": "./"
+    },
+    "async": {
+      "loading": "AsyncLoading",
+      "error": "AsyncError",
+      "delay": 200,
+      "timeout": 3000
+    }
+  },
   "uniStatistics": {
     "enable": false
   },
