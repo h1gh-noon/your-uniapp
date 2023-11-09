@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 /**
  * @description: 返回 min 至 max 之间的随机数
  * @param {Number}
@@ -418,4 +420,13 @@ export function removeClass(ele, cls) {
     const reg = new RegExp('(\\s|^)' + cls + '(\\s|$)')
     ele.className = ele.className.replace(reg, ' ')
   }
+}
+
+/**
+ * moment util
+ * @param {Object} date
+ * 解决：Deprecation warning: value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+ */
+export function momentUtil(date) {
+  return moment(new Date(date))
 }
