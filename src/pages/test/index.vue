@@ -1,15 +1,17 @@
 <template>
-  <hnCalendar v-model="date" />
-  {{ date }}
+  <hnCalendar v-model="data.dateArr" />
+  {{ data.date }}
 </template>
 
 <script setup name="test">
 import { reactive, ref } from 'vue'
 import { onLoad } from '@dcloudio/uni-app'
-import hnCalendar from '@/pages/components/hn-calendar'
+import hnCalendar from '@/components/hn-calendar'
 
-const date = ref('2020-01-01')
-
+const data = reactive({
+  dateArr: [],
+  date: '2020-01-01'
+})
 onLoad(val => {
   console.log(val)
 })
