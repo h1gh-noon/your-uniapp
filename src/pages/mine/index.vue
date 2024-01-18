@@ -1,5 +1,5 @@
 <template>
-  <template v-if="openId">
+  <template v-if="token">
     <div class="mine-page">
       登录成功
     </div>
@@ -23,23 +23,23 @@ const data = reactive({
     avatarUrl: '',
     nickName: `wx_${getRandomString(16)}`
   },
-  openId: null
+  token: null
 })
-const { userInfo, openId } = toRefs(data)
+const { userInfo, token } = toRefs(data)
 
 const getUserInfo = async () => {
   try {
-    data.openId = await login()
+    data.token = await login()
   } catch (error) { }
 }
 
 const initHandler = async () => {
   try {
-    const oId = uni.getStorageSync('openId')
+    const oId = uni.getStorageSync('token')
     if (oId) {
-      data.openId = oId
+      data.token = oId
     } else {
-      data.openId = await login()
+      data.token = await login()
     }
   } catch (e) { }
 }

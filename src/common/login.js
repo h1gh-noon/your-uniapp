@@ -23,17 +23,17 @@ export const login = () => {
       onlyAuthorize: true,
       success: async function ({ code }) {
         console.log('code', code)
-        const openId = await loginRequest(code)
-        if (openId) {
-          uni.setStorageSync('openId', openId)
-          resolve(openId)
+        const token = await loginRequest(code)
+        if (token) {
+          uni.setStorageSync('token', token)
+          resolve(token)
         } else {
           reject(null)
         }
         // uni.showToast({
         //   title: '登录成功！'
         // })
-        // uni.setStorageSync('openId', code)
+        // uni.setStorageSync('token', token)
       }
     })
   })
